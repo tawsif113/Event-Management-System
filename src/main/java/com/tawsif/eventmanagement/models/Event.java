@@ -9,7 +9,6 @@ public class Event {
     private static int idCounter = 0;
     private final int id;
 
-    @NotBlank
     private String name;
     private String type;
     private String date;
@@ -57,6 +56,10 @@ public class Event {
 
     public List<User> getRegistrations() {
         return registrations;
+    }
+
+    public String toCSV() {
+        return id + "," + name + "," + type + "," + date + "," + venue + "," + capacity + "," + registrations.size();
     }
 
     @Override
